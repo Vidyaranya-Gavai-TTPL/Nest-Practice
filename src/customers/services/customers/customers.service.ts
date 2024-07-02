@@ -24,6 +24,9 @@ export class CustomersService {
             createdAt: new Date()
         }
     ]
+    getAllCustomers(){
+        return this.users;
+    }
     findCustomerById(id: number){
         return this.users.find((user)=>user.id===id);
     }

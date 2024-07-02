@@ -5,6 +5,12 @@ import { CustomersService } from 'src/customers/services/customers/customers.ser
 @Controller('customers')
 export class CustomersController {
     constructor(private customerService: CustomersService) { }
+
+    @Get()
+    getAllCustomers(@Req() req: Request, @Res() res: Response) {
+        const customers = this.customerService.getAllCustomers();
+        res.status(200).json(customers);
+    }
     
     @Get(':id')
     getCustomer(@Param('id', ParseIntPipe) id: number, @Req() req: Request, @Res() res: Response) {

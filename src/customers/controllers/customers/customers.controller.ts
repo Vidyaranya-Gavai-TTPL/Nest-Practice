@@ -34,7 +34,6 @@ export class CustomersController {
     @Post('/create')
     @UsePipes(ValidationPipe)
     createCustomer(@Body() createCustomerDto: CreateCustomerDto) {
-        console.log(createCustomerDto);
         this.customerService.createCustomer(createCustomerDto);
     }
 }

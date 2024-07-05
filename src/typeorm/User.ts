@@ -15,10 +15,9 @@ export class User{
     username: String;
 
     @Column({
-        name: 'email_address',
         nullable: false,
     })
-    emailAddress: String
+    email: String
 
     @Column()
     password: String;
